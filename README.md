@@ -30,12 +30,12 @@ You may also specify a different file location for the Bloom filter using the
 using the `-b` flag.
 
 The server needs several seconds to load the Bloom filter into memory, as soon
-as it's up you can query plaintext passwords (not recommended) or UPPERCASE
+as it's up you can query plaintext passwords (not recommended) or LOWERCASE
 SHA-1 values (preferred) via the `/check` and `/check-sha1` endpoints.
 Simply pass the value in the query string:
 
     http://localhost:8000/check?admin
-    http://localhost:8000/check-sha1?D033E22AE348AEB5660FC2140AEC35850C4DA997
+    http://localhost:8000/check-sha1?d033e22ae348aeb5660fc2140aec35850c4da997
 
 If the value is in the filter, the server will return a 200 status code,
 otherwise a 418 (I'm a teapot). The latter is used to be distinguishable from
@@ -52,8 +52,8 @@ Or interactively:
 
     bloom -i check pwned-passwords-2.0.bloom
     Interactive mode: Enter a blank line [by pressing ENTER] to exit.
-    D033E22AE348AEB5660FC2140AEC35850C4DA997
-    >D033E22AE348AEB5660FC2140AEC35850C4DA997
+    d033e22ae348aeb5660fc2140aec35850c4da997
+    >d033e22ae348aeb5660fc2140aec35850c4da997
 
 ## Performance
 

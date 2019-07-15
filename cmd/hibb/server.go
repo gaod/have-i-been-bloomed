@@ -19,7 +19,7 @@ func check(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "GET" {
 		errorHandler(w, r, 404)
 	}
-	s := []byte(fmt.Sprintf("%X", sha1.Sum([]byte(r.URL.RawQuery))))
+	s := []byte(fmt.Sprintf("%x", sha1.Sum([]byte(r.URL.RawQuery))))
 	if filter.Check(s) {
 		w.WriteHeader(200)
 	} else {
