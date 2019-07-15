@@ -2,7 +2,6 @@ package main
 
 import (
 	"github.com/adewes/bloom"
-	"crypto/sha1"
 	"net/http"
 	"flag"
 	"fmt"
@@ -13,18 +12,6 @@ var filter *bloom.BloomFilter
 
 func errorHandler(w http.ResponseWriter, r *http.Request, status int) {
     w.WriteHeader(status)
-}
-
-func check(w http.ResponseWriter, r *http.Request) {
-	if r.Method != "GET" {
-		errorHandler(w, r, 404)
-	}
-	s := []byte(fmt.Sprintf("%x", sha1.Sum([]byte(r.URL.RawQuery))))
-	if filter.Check(s) {
-		w.WriteHeader(200)
-	} else {
-		w.WriteHeader(418)
-	}
 }
 
 func checkSHA1(w http.ResponseWriter, r *http.Request) {
@@ -50,7 +37,6 @@ func main() {
 		os.Exit(-1)
 	}
 	fmt.Printf("Listening on %s...", *bind)
-	http.HandleFunc("/check", check)
 	http.HandleFunc("/check-sha1", checkSHA1)
     fmt.Fprintln(os.Stderr, http.ListenAndServe(*bind, nil))
 }
