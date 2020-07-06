@@ -7,5 +7,6 @@ RUN CGO_ENABLED=0 go build -a -installsuffix cgo -o /app
 
 FROM alpine:3.12
 COPY --from=builder /app /bin/hibb
+COPY --from=builder /go/src/gitlab.kkinternal.com/ccnchien/have-i-been-bloomed/pwned-passwords-6.0.bloom /
 ENTRYPOINT ["hibb"]
 EXPOSE 8000
