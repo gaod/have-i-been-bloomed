@@ -1,0 +1,4 @@
+github.com/DCSO/bloom v0.2.4 h1:GYQuxfH7Q4mS+LM1iEVSSjkXbS5FyFSyh/n4y45X14c=
+github.com/DCSO/bloom v0.2.4/go.mod h1:G/tm7BJ6j725OJIGl5MCNpbbJbl09+8QWMNLr9mDLJ0=
+gopkg.in/urfave/cli.v1 v1.20.0 h1:NdAVW6RYxDif9DhDHaAortIu956m2c0v+09AZBPTbE0=
+gopkg.in/urfave/cli.v1 v1.20.0/go.mod h1:vuBzUtMdQeixQj8LVd+/98pzhxNGQoyuPBlsXHOQNO0=

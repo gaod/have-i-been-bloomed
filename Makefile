@@ -12,8 +12,8 @@ pwned-passwords-6.0.bloom: pwned-passwords-sha1-ordered-by-hash-v6.7z
 bloom-filter: pwned-passwords-6.0.bloom
 
 bloom-tool:
-	go get github.com/DCS0/bloom
-	go install github.com/DCS0/bloom
+	go get github.com/DCSO/bloom/...
+	go install github.com/DCSO/bloom/...
 
 server:
 	go get ./...
