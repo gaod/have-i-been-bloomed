@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/adewes/bloom"
+	"github.com/DCSO/bloom"
 	"net/http"
 	"flag"
 	"fmt"
